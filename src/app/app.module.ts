@@ -12,6 +12,7 @@ import { SiderbarComponent } from './shared/siderbar/siderbar.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component
     DashboardComponent,
     SiderbarComponent,
     HeaderComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
