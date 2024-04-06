@@ -9,6 +9,7 @@ import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component'
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SiderbarComponent } from './shared/siderbar/siderbar.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { HeaderComponent } from './shared/header/header.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
