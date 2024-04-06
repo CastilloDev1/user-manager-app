@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SiderbarComponent } from './shared/siderbar/siderbar.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     NopagefoundComponent,
     DashboardComponent,
     SiderbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
