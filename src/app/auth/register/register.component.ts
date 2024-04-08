@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 declare var jQuery: any;
@@ -39,13 +42,22 @@ export class RegisterComponent implements OnInit {
   });
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private usuarioService: UsuarioService,
+    private router: Router
   ){ }
 
   crearUsuario() {
     this.formSubmitted = true;
     if ( this.registerForm.valid ){
-      console.log(this.registerForm.value);
+      this.usuarioService.crearUsuario( this.registerForm.value )
+        .subscribe( (resp: any) => {
+          // Navegar al Dashboard
+          this.router.navigateByUrl('/');
+        }, (err: any) => {
+          // Si sucede un error
+          Swal.fire('Error', 'Ha ocurrido un error', 'error' );
+        });
     }
   }
 
